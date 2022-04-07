@@ -1,0 +1,84 @@
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 3px;
+}
+.content{
+  margin: 2%;
+  padding: 15px ;
+  box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
+}
+
+.important{
+  color: firebrick;
+  cursor: grab;
+}
+.cardFeed-img{
+  width: 30px;
+}
+
+
+.containerB{
+  margin: 2%;
+  padding: 15px ;
+
+
+}
+.inputStyle{
+  margin-left: auto;
+}
+
+.container{
+
+}
+
+.ButAlign{
+  margin-left: 580px;
+}
+
+.containerA{
+  margin: 2%;
+  padding: 15px;
+
+  margin-right: 200px;
+}
+.p1{
+  word-spacing: 1rem;
+}
+
+.btn-class{text-align: center !important;
+display: Block !important;}
+
+
+.card-img{
+  width: 70px;
+}
+
+.card{
+  border: none;
+}
+
+.inputStyle{
+  margin-left: auto;
+}
+
+
+.containerA{
+  margin: 2%;
+  padding: 15px ;
+  box-shadow: none;
+
+
+
+}
+.imporant{
+  color: firebrick;
+
+}
+
+.feedalign{
+  margin-left: 31px;
+}

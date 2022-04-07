@@ -1,0 +1,23 @@
+
+<h2 mat-dialog-title class="font-weight-bold imporant"> Signaler cet utilisateur</h2>
+<mat-dialog-content>
+  <h4 class="text-center font-weight-bold">  Pour quelle raison vous signaler cet utilisateur ?</h4>
+
+
+  <div *ngFor="let option of options">
+
+
+    <input
+      type="radio"
+      name=" 'SelectedOption'"
+
+      value= "{{option}}"
+
+      (change) ="radioChangeHandler($event)"> {{option}}
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button  type="submit" (click)="SignalUser()"> Signaler </button>
+  <button mat-button mat-dialog-close  type="submit"> Annuler </button>
+</mat-dialog-actions>

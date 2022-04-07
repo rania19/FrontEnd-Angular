@@ -1,0 +1,33 @@
+<div class="containerB">
+
+  <p>
+    <ngb-alert class="alertStyle" type="success" [dismissible]="false"><strong>
+      Votre identité a été approuvée avec succés
+    </strong>
+
+    </ngb-alert>
+  </p>
+
+<br/>
+  <br/>
+  <br/>
+  <form [formGroup]="changeEmailForm" (ngSubmit)="onSubmit()">
+  <div class="row d-flex justify-content-center">
+
+
+  <div class="form-group">
+    <input type="text" class="form-control changemail" align="center" id="newemail" [(ngModel)]='newemail' formControlName="newemail">
+    <span class="mi-help alert-danger" *ngIf="!changeEmailForm.get('newemail').valid && changeEmailForm.get('newemail').touched">
+          Email invalide
+        </span>
+    <br/>
+
+    <button class="btn btn-class " (click)="updateEmail()"> Modifier </button>
+
+  </div>
+
+  </div>
+  </form>
+
+</div>
+

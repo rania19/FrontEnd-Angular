@@ -1,0 +1,67 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="this.roles[0]=='ROLE_USER'">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="assets/images/brand.png"  class="imgLogo" alt="..."></a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active" routerLinkActive="active">
+      <a class="nav-link " [routerLink]="['home']" >  <p class="font-weight-bold"> <i class="fa fa-home headerStyle" aria-hidden="true"> </i>  Acceuil </p></a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link"  [routerLink]="['farms']"> <p class="font-weight-bold">  Fermes </p> </a>
+    </li>
+
+    <div *ngIf="idUser && this.user.clientrole ==='Agriculteur'">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link"  [routerLink]="['farm-manage']">  <p class="font-weight-bold">Ma-Ferme </p> </a>
+    </li>
+    </div>
+
+
+    <div *ngIf="idUser">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['account']"> <p class="font-weight-bold"> <i class="fa fa-user-circle headerStyle" aria-hidden="true">  </i> Compte  </p> </a>
+    </li>
+    </div>
+
+
+
+
+
+
+
+  </ul>
+  <div *ngIf="idUser" class="marginAdjust">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown"> </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        <img src="{{'http://localhost:8081/api/v1/ImgUser/'+idUser }}"  class="imgAdjust rounded" alt="...">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="menuStyle dropdown-item" [routerLink]="['user']"> Gérer le profil</a>
+        <a class="menuStyle dropdown-item" [routerLink]="['sendRec']"> Reclamer</a>
+        <a class="menuStyle grab dropdown-item" (click)="Deconnect()"> déconnexion</a>
+      </div>
+    </li>
+  </ul>
+</div>
+</nav>
+</div>
+

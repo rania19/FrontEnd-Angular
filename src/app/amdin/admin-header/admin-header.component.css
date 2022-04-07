@@ -1,0 +1,17 @@
+mat-toolbar{
+  background-color: #8bc53f
+}
+
+ul li {
+  list-style: none;
+}
+.imgLogo{
+  height: 48px;
+  width: 150px;
+}
+.marginAdjust{
+  margin-right: 90px;
+}
+.grab{
+  cursor: grab;
+}

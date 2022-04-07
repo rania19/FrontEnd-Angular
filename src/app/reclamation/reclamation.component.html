@@ -1,0 +1,60 @@
+
+
+<div class="container">
+  <div *ngIf="Reclist.length !=0">
+
+ <mat-form-field>
+   <input matInput  [matDatepicker]="myDatePicker"  placeholder="Filter par date" [(ngModel)]="selectedDate" (dateChange)="OnDateChange()">
+   <mat-datepicker-toggle [for]="myDatePicker" matSuffix> </mat-datepicker-toggle>
+   <mat-datepicker #myDatePicker></mat-datepicker>
+
+ </mat-form-field>
+
+
+
+  <div class="row">
+    <div class="col-12">
+
+      <div  *ngIf="Reclist">
+         <div *ngFor="let RecEl of Reclist | filter:term">
+
+           <div class="alert alert-success" role="alert">
+
+             <i class="fa fa-trash-o fa-2x font-weight-bold trashStyle" aria-hidden="true" (click)="OpenDeleteDialog(RecEl.id)"></i>
+
+             <h2 class="alert-heading"> {{RecEl.object}}</h2>
+             <p> {{RecEl.content}}</p>
+             <p class="font-weight-bold"> À: {{RecEl.date  | date:'dd-MM-yyyy'}} </p>
+             <hr>
+
+             <div class="card-header border-0 mb-0">
+               <img src="{{'http://localhost:8081/api/v1/ImgUser/'+RecEl.user.id }}" class="card-img inputStyle rounded-circle" alt="">
+               {{RecEl.user.userName}}
+             </div>
+
+
+           </div>
+
+
+
+
+         </div>
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+  <div *ngIf="Reclist.length == 0">
+    <h2 class="imporant text-center"> Pas de réclamations ! </h2>
+  </div>
+
+
+
+</div>

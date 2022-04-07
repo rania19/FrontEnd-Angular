@@ -1,0 +1,140 @@
+<div class="container">
+
+  <div class="row content">
+    <div class="col-md-6 mb-3 ">
+     <h1> INSCIVEZ-VOUS</h1>
+      <br/>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="userName"> Nom d'utilisateur</label>
+          <input type="text" id="userName" class="form-control " formControlName="userName">
+        <span class="mi-help alert-danger" *ngIf="!registerForm.get('userName').valid && registerForm.get('userName').touched">
+         Nom d'utilisateur invalide
+        </span>
+
+        </div>
+
+
+
+
+          <label for="ville"> Ville </label>
+          <select  class="selectstyle"
+                   id="ville"
+                   id="ville"
+                   name="Selectedville"
+
+                   (change) ="selectChangeHandler($event)">
+            <option *ngFor="let ville of villes">{{ville}}</option>
+
+          </select>
+
+
+
+        <div class="form-group">
+          <label for="addresse"> Adresse </label>
+          <input type="text" id="addresse" class="form-control " formControlName="addresse">
+
+          <span class="mi-help alert-danger" *ngIf="!registerForm.get('addresse').valid && registerForm.get('addresse').touched">
+           Adresse invalide
+        </span>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text span-class" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+
+              <input type="file" class="custom-file-input" accept="image/*" (change)="onSelectFile($event)" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+
+              <label class="custom-file-label" for="inputGroupFile01">Télecharger </label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <img [src]="imgURL" height="200" *ngIf="imgURL">
+        </div>
+
+
+
+
+        <div class="form-group">
+          <label for="email"> Email</label>
+          <input type="email" id="email" class="form-control" formControlName="email">
+          <span class="mi-help alert-danger" *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">
+         Email invalide
+        </span>
+        </div>
+
+
+        <div class="form-group">
+          <label for="telephone"> Téléphone</label>
+          <input type="text" id="telephone" class="form-control" formControlName="telephone">
+          <span class="mi-help alert-danger" *ngIf="!registerForm.get('telephone').valid && registerForm.get('telephone').touched">
+         Numéro de téléphone invalide
+        </span>
+        </div>
+        <div class="form-group">
+
+          <div *ngFor="let option of options">
+
+
+            <input
+              type="radio"
+
+              name=" 'SelectedOption'"
+
+              value= "{{option}}"
+
+              (change) ="radioChangeHandler($event)"> {{option}}
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="form-group">
+          <label for="mdp"> Mot de passe </label>
+          <input type="password" id="mdp" class="form-control " formControlName="mdp">
+          <span class="mi-help alert-danger" *ngIf="!registerForm.get('mdp').valid && registerForm.get('mdp').touched">
+          Le mot de passe doit avoir au moins 8 caractéres
+        </span>
+        </div>
+
+
+        <button class="btn btn-class " id="submit" type="submit"> S'inscrire </button>
+         <br/>
+        <br/>
+        <p *ngIf=this.isSuccessful>
+          <ngb-alert class="alertStyle" type="success" [dismissible]="false"><strong>Bienvenue parmi nous! Veuillez s'authentifier</strong> </ngb-alert>
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+
+
+</div>

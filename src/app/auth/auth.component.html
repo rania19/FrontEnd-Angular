@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div *ngIf=this.accessDenied class="justify-content-center secondmain">
+    <p>
+      <ngb-alert class="alertStyle" type="success" [dismissible]="false"><strong> Désolée ,Vous etes banni à causes des signals</strong> </ngb-alert>
+    </p>
+
+  </div>
+<div class="row content">
+
+
+
+  <div class="col-md-6 mb-3">
+
+    <img src="/assets/images/products.PNG" class="img-fluid" alt="image" >
+  </div>
+  <div class="col-md-6 mb-3">
+    <h1 class="signin-text mb-3"> S'authentifier </h1>
+   <form [formGroup]="AuthForm" (ngSubmit)="onSubmit()">
+     <div class="form-group">
+       <label for="userName"> Nom d'utilisateur</label>
+       <input type="text" id="userName" class="form-control " formControlName="userName">
+     </div>
+
+     <div class="form-group">
+       <label for="mdp"> Mot de passe </label>
+       <input type="password" id="mdp" class="form-control " formControlName="mdp">
+     </div>
+
+     <button class="btn btn-class"> Login </button>
+   </form>
+    <br>
+    <a [routerLink]="['/register']" class="link" class="linkStyle">  Vous n'avez pas un compte? Cliquez ici pour s'inscrire </a>
+  </div>
+
+
+
+</div>
+
+
+</div>

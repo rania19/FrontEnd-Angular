@@ -1,0 +1,67 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="assets/images/brand.png"  class="imgLogo" alt="..."></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" routerLinkActive="active">
+        <a class="nav-link " [routerLink]="['']" >  <p class="font-weight-bold"> <i class="fa fa-home headerStyle" aria-hidden="true"> </i>  Acceuil </p></a>
+      </li>
+
+
+      <li class="nav-item active" routerLinkActive="active">
+        <a class="nav-link " (click)="todef()" >  <p class="font-weight-bold"> <i class="fa fa-question-circle headerStyle" aria-hidden="true"> </i>  Qui sommes nous </p></a>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
+    <div>
+      <ul class="navbar-nav ml-auto">
+
+        <div class="btnmargin">
+        <button class="btn btn-class" id="submit" type="submit" (click)="toRegister()"> S'inscrire</button>
+        </div>
+        <button class="btn btn-class " id="submit" type="submit" (click)="toLogin()"> S'authentifier</button>
+      </ul>
+    </div>
+    <div>
+
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+
+
+  <div class="row content">
+
+
+
+    <div class="col-md-6 mb-3">
+
+      <img src="/assets/images/brand.png" class="img-fluid" alt="image" >
+    </div>
+    <div class="col-md-6 mb-3">
+      <p class="font-weight-bold title"> Qui sommes nous ?</p>
+      <br>
+      <p class="font-weight-bold"> Ce site est dédié aux investissements des aliments 100% bio. On offre à travers « Firmetna» un espace où les agriculteurs peuvent gagner de l’argent à partir des aliments bio. D’une autre part, les clients peuvent investir leurs argents dans ces aliments. N’hésitez pas à nous rejoindre !   </p>
+
+
+      <br>
+
+    </div>
+
+
+
+  </div>
+
+
+</div>
+

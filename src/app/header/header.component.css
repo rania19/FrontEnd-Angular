@@ -1,0 +1,29 @@
+.imgAdjust{
+  max-width: 35px;
+}
+
+.headerStyle{
+  color:#8bc53f;
+}
+
+.grab{
+  cursor: grab;
+}
+
+.imgLogo{
+  height: 48px;
+  width: 150px;
+}
+
+.iconSize{
+
+  width: 20px;
+}
+.marginAdjust{
+  margin-right: 50px;
+}
+
+.menuStyle:hover{
+  background-color: #8bc53f ;
+  box-shadow: none;
+}

@@ -1,0 +1,29 @@
+<mat-nav-list>
+<div class="profile-card">
+  <div class="header">
+  <h2>   {{user.userName}}  </h2>
+
+  </div>
+  <img src="{{'http://localhost:8081/api/v1/ImgUser/'+idUser }}" alt="">
+
+</div>
+  <br/>
+
+  <mat-divider></mat-divider>
+
+  <a mat-list-item routerLinkActive="list-item-active"  [routerLink]="['dash']"> Dashboard </a>
+  <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['ManageUsers']"> Utlisateurs </a>
+  <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['livreur']"> Livreurs </a>
+
+  <a *ngIf="com" mat-list-item routerLinkActive="list-item-active" (click)="OnClick()"> Reclamations
+    <a *ngIf="com.newsnumb>0" class="notif">{{com.newsnumb}} </a></a>
+
+
+
+
+
+
+
+
+
+</mat-nav-list>-

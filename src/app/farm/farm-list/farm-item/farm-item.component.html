@@ -1,0 +1,19 @@
+<div class="col-lg" *ngIf="farm">
+<div class="item" [routerLink]="['/det',farm.id]"
+   class="list-group-item clearfix shadow p-3 mb-5 bg-white rounded"
+>
+  <div class="media" *ngIf="farm">
+    <img class="mr-3" src="{{'http://localhost:8081/api/v1/ImgFarm/'+farm.id }}" style = "max-height: 70px ;width:fil-content;" alt="Generic placeholder image">
+    <div class="media-body" *ngIf="farm">
+      <p class="font-weight-bold" > {{farm.nomF}}</p>
+      <p class="font-weight-bold important"> ville: {{farm.ville}}</p>
+      <p class="font-weight-bold"> Num: {{farm.user.telephone}}</p>
+    </div>
+  </div>
+
+
+
+</div>
+
+</div>
+

@@ -1,0 +1,200 @@
+<div class="containerA">
+  <div class="justify-content-center">
+    <button class="btn btn-class"  (click)="GetAddForm()">
+      Ajouter un livreur  </button>
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="form-group row">
+    <label for="search" class="col-sm-2 col-form-label" style="text-align: right;"> Rechercher</label>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="text"  id="search" class="form-control" placeholder="Rechercher" [(ngModel)]="term">
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-8" *ngIf="OrdertoAdd">
+    <div class="container">
+      <div class="row content ">
+
+        <div class="col-md-6 mb-3 ">
+          <h3 class="font-weight-bold"> Ajouter un livreur</h3>
+          <hr>
+          <br/>
+          <form [formGroup]="AjoutLivreur" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="userName"> Nom d'utilisateur</label>
+              <input type="text" id="userName" class="form-control " formControlName="userName">
+              <span class="mi-help alert-danger" *ngIf="!AjoutLivreur.get('userName').valid && AjoutLivreur.get('userName').touched">
+         Nom d'utilisateur invalide
+        </span>
+
+            </div>
+
+
+
+            <div class="form-group">
+              <label for="ville"> Ville </label>
+              <select  class="selectstyle"
+                       id="ville"
+                       id="ville"
+                       name="Selectedville"
+
+                       (change) ="selectChangeHandler($event)">
+                <option *ngFor="let ville of villes">{{ville}}</option>
+
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <label for="telephone"> Téléphone</label>
+              <input type="text" id="telephone" class="form-control" formControlName="telephone">
+              <span class="mi-help alert-danger" *ngIf="!AjoutLivreur.get('telephone').valid && AjoutLivreur.get('telephone').touched">
+         Numéro de téléphone invalide
+        </span>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text span-class" id="inputGroupFileAddon01">Télécharger</span>
+                </div>
+                <div class="custom-file">
+
+                  <input type="file" class="custom-file-input" accept="image/*" (change)="onSelectFile($event)" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <img [src]="imgURL" height="200" *ngIf="imgURL">
+            </div>
+
+
+
+
+            <div class="form-group">
+              <label for="email"> Email</label>
+              <input type="email" id="email" class="form-control" formControlName="email">
+              <span class="mi-help alert-danger" *ngIf="!AjoutLivreur.get('email').valid && AjoutLivreur.get('email').touched">
+         Email invalide
+        </span>
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+              <label for="mdp"> Mot de passe </label>
+              <input type="password" id="mdp" class="form-control " formControlName="mdp">
+              <span class="mi-help alert-danger" *ngIf="!AjoutLivreur.get('mdp').valid && AjoutLivreur.get('mdp').touched">
+          Le mot de passe doit avoir au moins 8 caractéres
+        </span>
+            </div>
+
+
+            <button class="btn btn-class " id="submit" type="submit"> Ajouter </button>
+
+          </form>
+        </div>
+      </div>
+      <div *ngIf=this.isSuccessful class="justify-content-center secondmain">
+        <p>
+          <ngb-alert class="alertStyle" type="success" [dismissible]="false"><strong> Livreur ajouté</strong> </ngb-alert>
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="container">
+    <table class="table table-hover" *ngIf="listLivreurs" width="100%">
+      <thead class="thalpha">
+      <tr>
+        <th scope="col">Livreur</th>
+        <th  scope="col">Email</th>
+        <th  scope="col">Ville</th>
+
+        <th  scope="col"> Telephone </th>
+        <th  scope="col"> Note</th>
+        <th  scope="col">Actions</th>
+
+      </tr>
+      </thead>
+      <tbody class="tbalpha" *ngFor="let liv of listLivreurs | filter:term">
+
+
+      <tr>
+
+        <td class="card flex-row flex-wrap">
+          <div class="card-header border-0">
+            <img src="{{'http://localhost:8081/api/v1/Imgliv/'+liv.id }}" class="card-img inputStyle rounded-circle" alt="">
+            {{liv.userName}}
+          </div>
+
+
+        </td>
+        <td> {{liv.email}}</td>
+        <td>{{liv.ville}} </td>
+
+        <td>{{liv.telephone}} </td>
+        <td class="note font-weight-bold">{{liv.rating}} /5 </td>
+        <td>
+        <button class="btn btn-danger" (click)="deleteLiv(liv.id)"> Retirer </button>
+        </td>
+      </tr>
+
+
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

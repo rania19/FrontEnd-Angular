@@ -1,0 +1,44 @@
+table {
+  width: 100%;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: #8bc53f;
+  height: 3px;
+
+}
+
+
+.card-img{
+  width: 30px;
+}
+
+.card{
+  border: none;
+}
+
+.inputStyle{
+  margin-left: auto;
+}
+
+.container{
+  padding: 20px;
+
+}
+.imporant{
+  color: firebrick;
+
+}
+
+
+a:hover{
+  cursor: grabbing;
+
+}
+.p1{
+  word-spacing: 1rem;
+}

@@ -1,0 +1,75 @@
+
+ngb-rating {
+  color: #88ff00;
+  font-size: 80px;
+}
+
+.container{
+
+}
+.marginAdjust{
+  margin-right: 50px;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  color: #d3d3d3;
+}
+.full {
+  color: firebrick;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: firebrick;
+}
+table {
+  width: 100%;
+}
+
+.imgAdjust{
+  max-width: 35px;
+}
+
+.headerStyle{
+  color:#8bc53f;
+}
+
+.imgLogo{
+  height: 48px;
+  width: 150px;
+}
+
+.iconSize{
+
+  width: 20px;
+}
+
+
+.card-img{
+  width: 30px;
+}
+
+.card{
+  border: none;
+}
+
+.inputStyle{
+  margin-left: auto;
+}
+
+
+.imporant{
+  color: firebrick;
+
+}
+
+
+a:hover{
+  cursor: grabbing;
+
+}
+

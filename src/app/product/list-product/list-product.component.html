@@ -1,0 +1,48 @@
+
+
+<div class="row content" *ngIf="AnimalProducts.length>0">
+  <h2 *ngIf="AnimalProducts">Animaux:
+
+    <hr>
+  </h2>
+
+</div>
+
+
+
+
+<div class="row" *ngIf="AnimalProducts">
+
+
+  <app-product-item *ngFor="let Animal of AnimalProducts" [AnimalProduct]="Animal" [idFarm]="idF"> </app-product-item>
+
+</div>
+
+
+
+<div class="row content" *ngIf="MilkProducts.length>0">
+  <h2>Produits laitiers:
+    <hr>
+  </h2>
+
+
+</div>
+<div class="row" *ngIf="MilkProducts">
+<app-milk-product-item *ngFor="let MilkProd of MilkProducts" [MilkProduct]="MilkProd" [idFarm]="idF"></app-milk-product-item>
+</div>
+
+
+<div class="row content" *ngIf="VegProducts.length>0">
+
+  <h2> Légumes/Fruits:
+    <hr>
+  </h2>
+
+</div>
+
+<div class="row" *ngIf="VegProducts.length>0">
+  <app-vegt-product-item *ngFor="let Veg of VegProducts" [VegProduct]="Veg" [idFarm]="idF" ></app-vegt-product-item>
+</div>
+
+
+

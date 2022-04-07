@@ -1,0 +1,71 @@
+<div class="container">
+<div class="cards">
+
+  <div class="card-single">
+    <div *ngIf="clientsNumber">
+      <h1> {{clientsNumber}}</h1>
+      <span> Clients </span>
+    </div>
+    <div>
+      <p class="font-weight-bold">  <i class="fa fa-users" aria-hidden="true"></i> </p>
+    </div>
+  </div>
+
+
+  <div class="card-single">
+    <div *ngIf="FarmsNumber">
+      <h1>{{FarmsNumber}}</h1>
+      <span> Fermes</span>
+    </div>
+    <div>
+      <i class="fa fa-home" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="card-single">
+    <div *ngIf="LivreurNumber">
+      <h1> {{LivreurNumber}} </h1>
+      <span> Livreurs </span>
+    </div>
+    <div>
+      <i class="fa fa-user" aria-hidden="true"></i>
+
+    </div>
+  </div>
+
+  <div class="card-single last-card">
+    <div *ngIf="InvestsNumber">
+      <h1>{{InvestsNumber}} </h1>
+      <span> Investissements </span>
+    </div>
+    <div>
+      <i class="fa fa-usd" aria-hidden="true"></i>
+    </div>
+  </div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<mat-divider>
+</mat-divider>
+
+
+<div>
+
+  <app-stat> </app-stat>
+
+
+</div>
+
+<mat-divider>
+</mat-divider>
+
+

@@ -1,0 +1,103 @@
+.containerB{
+  margin: 2%;
+  padding: 15px ;
+
+
+}
+
+.important{
+  color: firebrick;
+  margin-left: 15px;
+}
+
+.firstline {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 1px;
+}
+hr{
+  padding: 1px;
+}
+.card{
+  border: none;
+}
+
+.input-wrapper {
+  margin-bottom:5px;
+}
+
+.Adjust{
+  margin: 1%;
+  padding: 15px ;
+  width: 80%;
+
+}
+
+.tabStyle{
+  border: none;
+}
+
+.importantWord{
+  color: firebrick;
+}
+
+
+table {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content{
+  margin: 2%;
+  padding: 15px;
+
+}
+
+.firstline {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 1px;
+}
+
+table {
+  width: 100%;
+}
+
+
+
+.imporant{
+  color: firebrick;
+
+}
+.card-img{
+  width: 30px;
+}
+
+.card{
+  border: none;
+}
+
+.inputStyle{
+  margin-left: auto;
+}
+a {
+  cursor: grab;
+}

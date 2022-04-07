@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row content">
+    <h1 class="font-weight-bold">Confirmer la livraison du mois</h1>
+    <hr class="firstline">
+
+    <table class="table table-hover" *ngIf="ToConfirmList" width="100%">
+      <thead class="thalpha">
+      <tr>
+        <th scope="col"> Ferme</th>
+        <th  scope="col"> Aliments</th>
+        <th  scope="col"> Quantité à livré ce mois</th>
+        <th  scope="col"> Actions</th>
+
+      </tr>
+      </thead>
+      <tbody class="tbalpha">
+
+
+      <tr *ngFor="let inv of ToConfirmList">
+
+        <td> {{inv.investedInFarm.nomF}}</td>
+        <td>
+          <div class="row card flex-row flex-wrap" *ngFor="let prodEL of inv.listproductelements">
+          <div class="card-header border-0">
+            <img src="{{'http://localhost:8081/api/productManage/ImgProd/'+ prodEL.product.id }}" class="card-img inputStyle rounded-circle" alt="">
+            {{prodEL.product.name}}
+          </div>
+          </div>
+        </td>
+        <td>
+
+          <div class="row card flex-row flex-wrap" *ngFor="let prodEL of inv.listproductelements">
+            <div class="card-header border-0">
+              {{prodEL.product.name}}:
+              {{prodEL.quantity}} kg/L
+            </div>
+          </div>
+
+        </td>
+        <td>
+
+          <div *ngFor="let option of options">
+
+
+            <input
+              type="radio"
+              name=" 'SelectedOption'+{{inv.id}}"
+
+              value= "{{option}}"
+
+
+              (change) ="radioChangeHandler($event,inv)"> {{option}}
+          </div>
+
+
+
+
+          </td>
+      </tr>
+
+
+
+      </tbody>
+    </table>
+
+    <button class="btn btn-class " id="submit" type="submit" (click)="ManageInv()"> Appliquer </button>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,85 @@
+.banner{
+
+  height: 100%;
+
+  background-image: url('/assets/images/banner.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+a{
+  cursor: grab;
+}
+.desc{
+  color: #fff;
+
+  height: auto;
+  width: 50%;
+  top:100%;
+  font-style: oblique;
+  transform: translate(-50%);
+  z-index: 1;
+  margin-left: 675px;
+  font-size: 3.5rem;
+  font-weight: 750;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,rgba(0,0,0,10));
+
+}
+
+h1{
+  color: #fff;
+
+  height: auto;
+  width: 100%;
+  top:50%;
+  transform: translate(-50%);
+  z-index: 1;
+  margin-left: 675px;
+  font-size: 5.5rem;
+  font-weight: 750;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,rgba(0,0,0,10));
+}
+#intro{
+  height: 100%;
+}
+#intro{
+  background: url('/assets/images/banner.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.imgAdjust{
+  max-width: 35px;
+}
+
+.btnmargin{
+  margin-right: 15px;
+}
+.title{
+  font-size: 35px;
+}
+
+.content{
+  margin: 8%;
+  padding: 4rem 1rem 4rem 1rem;
+  box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
+}
+
+.headerStyle{
+  color:#8bc53f;
+}
+
+.imgLogo{
+  height: 48px;
+  width: 150px;
+}
+
+.iconSize{
+
+  width: 20px;
+}

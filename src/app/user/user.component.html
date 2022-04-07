@@ -1,0 +1,90 @@
+
+
+
+
+<div class="containerB">
+
+<form  [formGroup]="UpdateUserForm" (ngSubmit)="onSubmit()" >
+  <div class="row d-flex justify-content-center">
+<div class="card mb-3" style="max-width: 400px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{'http://localhost:8081/api/v1/ImgUser/'+idUser }}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+
+        <h5 class="card-title"></h5>
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="userName"> Nom d'utilisateur</label>
+        <input type="text" class="form-control" id="userNAme"    [(ngModel)]="user.userName" name="userName" formControlName="userName">
+            <span class="mi-help alert-danger" *ngIf="!UpdateUserForm.get('userName').valid && UpdateUserForm.get('userName').touched">
+           Nom d'utilisateur invalide
+        </span>
+
+          </div>
+
+          <br/>
+          <br/>
+          <div class="form-group">
+            <label for="email"> Email</label>
+          <input type="text" class="form-control" id="email" [(ngModel)]="user.email"   formControlName="email">
+            <span class="mi-help alert-danger" *ngIf="!UpdateUserForm.get('email').valid && UpdateUserForm.get('email').touched">
+          email invalide
+        </span>
+        <p class="card-text"> <small class="text-muted"></small></p>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="card mb-3" style="max-width: 400px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-8">
+
+        <h5 class="card-title"> </h5>
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="addresse"> Adresse</label>
+          <input type="text" class="form-control" id="addresse"  [(ngModel)]="user.addresse"  formControlName="addresse">
+            <span class="mi-help alert-danger" *ngIf="!UpdateUserForm.get('addresse').valid && UpdateUserForm.get('addresse').touched">
+           Adresse invalide
+        </span>
+
+          </div>
+
+          <br/>
+          <br/>
+
+
+
+          <button class="btn btn-class " id="submit" type="submit"> Modifier </button>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+  <hr>
+  </div>
+</div>
+  </form>
+</div>

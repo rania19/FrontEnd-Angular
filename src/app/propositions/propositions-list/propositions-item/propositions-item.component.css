@@ -1,0 +1,43 @@
+.content{
+  margin: 2%;
+  padding: 15px ;
+  box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
+}
+
+
+.firstline {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 3px;
+}
+
+.pos {
+  display:inline-block;
+  width: 12rem;
+}
+.text-color{
+  color:#8bc53f;
+}
+.styleImg{
+  max-height: 70px ;width:fil-content;
+}
+
+.card-data {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+.prodCont{
+  border: 1px;
+  border-color: black;
+}

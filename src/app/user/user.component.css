@@ -1,0 +1,24 @@
+.containerB{
+  margin: 2%;
+  padding: 15px ;
+
+
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 1px;
+}
+
+.card{
+  border: none;
+}
+
+.input-wrapper {
+  margin-bottom:5px;
+}
+

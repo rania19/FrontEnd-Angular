@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-6" *ngIf="VegProduct">
+      <div class="card">
+
+        <img class="img-fluid" src="{{'http://localhost:8081/api/productManage/ImgProd/'+VegProduct.id }}" alt=""/>
+        <div class="card-body">
+          <h4 class="card-title"> {{VegProduct.name}} </h4>
+          <div class="card-subtitle text-truncate text-muted"> {{VegProduct.description}}</div>
+          <div class="card-text d-flex justify-content-between">
+            <span class="text-color font-weight-bold">  Price/Animal</span>
+
+            <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{VegProduct.priceperUnit}}   DT </div>
+
+
+      </span>
+
+          </div>
+
+
+          <div class="card-text d-flex justify-content-between">
+            <span class="text-color font-weight-bold">  Stock</span>
+
+            <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{VegProduct.quantity}}   </div>
+
+
+      </span>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

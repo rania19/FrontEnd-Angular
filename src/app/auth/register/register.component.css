@@ -1,0 +1,60 @@
+.content{
+  margin: 2%;
+  padding: 25px ;
+
+}
+.alertStyle{
+
+  background-color: #8bc53f;
+
+}
+
+
+h1{
+  color: #8bc53f;
+  width: 100%;
+  top:50%;
+  font-weight: 600;
+}
+
+
+.selectstyle{
+  display: block;
+  width: 100%;
+  font-size:1rem;
+  font-size:1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-color: #8bc53f ;
+  color:#8bc53f;
+  border-style: solid !important;
+  border-width: 0 0 1px 0 !important;
+  padding: 0px !important;
+  height: auto;
+  border-radius: 0;
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: none;
+}
+
+.secondmain{
+  padding: 20px 0;
+}
+
+.content{
+  margin: 2%;
+  padding: 25px ;
+
+}
+.span-class{
+  background-color: #8bc53f;
+  border: none;
+}
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 1px;
+}

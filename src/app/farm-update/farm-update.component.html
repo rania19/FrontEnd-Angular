@@ -1,0 +1,64 @@
+
+
+
+
+<div class="containerB" *ngIf="farm">
+
+  <form  [formGroup]="updateFarmForm" (ngSubmit)="onSubmit()" >
+    <div class="row d-flex justify-content-center">
+      <div class="card mb-3" style="max-width: 400px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{'http://localhost:8081/api/v1/ImgFarm/'+farm.id}}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+
+            <h5 class="card-title"></h5>
+            <div class="card-body">
+
+              <div class="form-group">
+                <label for="nomF"> Nom de la ferme</label>
+                <input type="text" class="form-control" id="nomF"    [(ngModel)]="farm.nomF" name="nomF" formControlName="nomF">
+                <span class="mi-help alert-danger" *ngIf="!updateFarmForm.get('nomF').valid && updateFarmForm.get('nomF').touched">
+           Nom de ferme invalide
+        </span>
+
+              </div>
+
+              <br/>
+              <br/>
+              <div class="form-group">
+                <label for="descriptionF"> Description </label>
+                <input type="text" class="form-control" id="descriptionF" [(ngModel)]="farm.descriptionF"   formControlName="descriptionF">
+                <span class="mi-help alert-danger" *ngIf="!updateFarmForm.get('descriptionF').valid && updateFarmForm.get('descriptionF').touched">
+          Description invalide
+        </span>
+                <p class="card-text"> <small class="text-muted"></small></p>
+              </div>
+              <br/>
+              <br/>
+              <div class="form-group">
+                <label for="region"> Adresse </label>
+                <input type="text" class="form-control" id="region" [(ngModel)]="farm.region"   formControlName="region">
+                <span class="mi-help alert-danger" *ngIf="!updateFarmForm.get('region').valid && updateFarmForm.get('region').touched">
+          Adresse invalide
+        </span>
+                <p class="card-text"> <small class="text-muted"></small></p>
+              </div>
+
+              <button class="btn btn-class " id="submit" type="submit"> Modifier </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <hr>
+      </div>
+    </div>
+  </form>
+</div>

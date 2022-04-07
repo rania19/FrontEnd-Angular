@@ -1,0 +1,50 @@
+<div class="col-lg-4" *ngIf="propE">
+
+
+
+  <div class="row">
+    <td>
+      <div class="card pos ">
+        <div class="col-xs-4">
+        <div class="card-body">
+          <img class="img-fluid styleImg" src="{{'http://localhost:8081/api/productManage/ImgProd/'+propE.product.id }}" alt=""/>
+          <tr>
+          <h5 class="card-title font-weight-bold">{{propE.product.name}}</h5> </tr>
+          <div class="card-subtitle text-truncate text-muted"> {{propE.product.description}}</div>
+          <tr>  <div class="card-text d-flex justify-content-between">
+            <span class="text-color font-weight-bold">  Quantité/Nombre </span>
+
+            <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{propE.quantity}} {{unity}}    </div>
+
+
+      </span>
+
+          </div> </tr>
+
+          <tr>
+            <div class="card-text d-flex justify-content-between">
+              <span class="text-color font-weight-bold">  Price </span>
+
+              <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{propE.price}} DT    </div>
+
+
+      </span>
+
+            </div>
+
+          </tr>
+
+      </div>
+        </div>
+    </div>
+    </td>
+
+  </div>
+
+</div>
+
+
+
+

@@ -1,0 +1,46 @@
+.container{
+  padding: 20px;
+
+}
+
+table {
+  width: 100%;
+}
+
+
+
+
+.card-img{
+  width: 30px;
+}
+
+.card{
+  border: none;
+}
+
+.inputStyle{
+  margin-left: auto;
+}
+
+
+.imporant{
+  color: firebrick;
+
+}
+
+
+a:hover{
+  cursor: grabbing;
+
+}
+
+hr{
+  border: 0;
+  clear:both;
+  display:block;
+
+  margin-right: 600px;
+  background-color:#8bc53f;
+  height: 3px;
+
+}

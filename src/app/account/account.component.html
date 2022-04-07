@@ -1,0 +1,168 @@
+
+
+<div class="containerB">
+
+  <div>
+    <h1 class="font-weight-bold">Information personnelles</h1>
+    <hr class="firstline">
+     <div class="Adjust">
+
+
+       <div class="row">
+         <p class="col-md-4 font-weight-bold"> Nom Utilisateur: {{user.userName}}</p>
+       </div>
+       <div class="row">
+         <p class="col-md-4 font-weight-bold"> Compte: {{user.clientrole}}</p>
+       </div>
+       <div class="row">
+         <p class="col-md-4 font-weight-bold"> Télephone: {{user.telephone}}</p>
+       </div>
+    <div class="row">
+      <p class="col-md-4 font-weight-bold">Email: {{user.email}}</p>
+
+    </div>
+
+
+
+  </div>
+
+
+   </div>
+
+  <div *ngIf="CustData">
+    <h1 class="font-weight-bold">Abonnement infos</h1>
+    <hr class="firstline">
+
+    <div class="Adjust">
+
+
+      <div class="row" *ngIf="CustData.brand">
+        <p class="col-md-4 font-weight-bold"> marque: {{CustData.brand}}</p>
+      </div>
+      <div class="row">
+        <p class="col-md-4 font-weight-bold" *ngIf="CustData.lastfour"> Numéro: ************{{CustData.lastfour}}</p>
+      </div>
+      <div class="row">
+        <p class="col-md-4 font-weight-bold" *ngIf="CustData.expmonth"> Expire le: {{CustData.expmonth}}/{{CustData.expyear}}</p>
+      </div>
+
+
+      <div class="row">
+          <p>
+        <a  class="important font-weight-bold" (click)="GetUpdateForm()"> Changer les donées de paimenet</a>
+        </p>
+      </div>
+
+  </div>
+  </div>
+  <div class="container" *ngIf="modifyOn">
+    <div class="container mt-4 d-flex justify-content-center main">
+      <div class="card">
+        <form  [formGroup]="CardInfos">
+          <div class="px-3 pt-3">
+            <label for="card number" class="d-flex justify-content-between">
+              <span class="labeltxt"> Numéro de carte </span>
+              <img src="/assets/images/newcards.jpg" width="25" class="image">
+            </label>
+            <input type="number"  class="form-control inputtxt" placeholder="Credit Card #" formControlName="cardNumber"  name="cardNumber">
+          </div>
+          <div class="d-flex justify-content-between px-3 pt-4">
+            <input type="text" placeholder="Mois d'expiration" formControlName="expMonth" name="expMonth">
+            <input type="text" placeholder="Année d'expiration" formControlName="expYear" name="expYear">
+            <input type="text" placeholder="CVC" formControlName="cvc" name="cvc">
+          </div>
+          <div class="container mt-4 d-flex justify-content-center secondmain">
+            <button class="btn btn-class" (click)="chargeCreditCard()">Appliquer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div *ngIf=this.ErrorData class="justify-content-center failmain row">
+      <p class="font-weight-bold important">
+        Les données saisies sont incorrectes, veuillez ressayer!
+      </p>
+    </div>
+  </div>
+
+
+
+
+    <div>
+
+
+    <h1 class="font-weight-bold" *ngIf="this.user.clientrole ==='Investisseur'"> Investissements </h1>
+      <hr class="firstline" *ngIf="this.user.clientrole ==='Investisseur'">
+      <h2 *ngIf="listInvests.length ===0 && this.user.clientrole ==='Investisseur'"> Vous  n'êtes pas abonné à des investissements </h2>
+
+
+      <div>
+  <table class="table table-hover" *ngIf="this.user.clientrole ==='Investisseur' && listInvests.length>0" width="100%">
+    <thead class="thalpha">
+    <tr>
+      <th scope="col"> Ferme</th>
+      <th  scope="col"> Aliments</th>
+      <th  scope="col"> Montant/Mois</th>
+      <th  scope="col"> Etat</th>
+      <th  scope="col"> Action</th>
+
+    </tr>
+    </thead>
+    <tbody class="tbalpha">
+
+
+    <tr *ngFor="let inv of listInvests">
+
+      <td> {{inv.investedInFarm.nomF}}</td>
+      <td>
+        <div class=" card flex-row flex-wrap" *ngFor="let prodEL of inv.listproductelements">
+          <div class="card-header border-0">
+            <img src="{{'http://localhost:8081/api/productManage/ImgProd/'+ prodEL.product.id }}" class="card-img inputStyle rounded-circle" alt="">
+           {{prodEL.product.name}}
+          </div>
+        </div>
+      </td>
+      <td>
+        <strong> {{inv.total}}</strong>
+       <strong> DT</strong>  </td>
+      <td>
+        <strong class="importantWord"> {{inv.invStatus}}</strong>
+
+
+      <td>
+        <a  class="card-link feedalign imporant font-weight-bold" (click)="openDialog(inv.id)"> Annuler </a>
+
+
+      </td>
+    </tr>
+
+
+
+    </tbody>
+  </table>
+      </div>
+
+
+
+
+    </div>
+
+
+  <div>
+
+
+       <app-farm-invests *ngIf="this.user.clientrole ==='Agriculteur'"></app-farm-invests>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+</div>

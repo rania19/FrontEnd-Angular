@@ -1,0 +1,100 @@
+
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="assets/images/brand.png"  class="imgLogo" alt="..."></a>
+    <ul class="navbar-nav mr-auto">
+      <ng-template #t let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+  </span>
+      </ng-template>
+
+      <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
+    <div *ngIf="idUser" class="marginAdjust">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown"> </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            <img src="{{'http://localhost:8081/api/v1/Imgliv/'+idUser }}"  class="imgAdjust rounded" alt="...">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <a class="dropdown-item" href="#"> déconnexion</a>
+          </div>
+        </li>
+
+
+
+
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+
+  <br/>
+
+<h2 class="text-center" *ngIf="listLiv.length>0"> Vous trouvez ci-dessous les biens que vous êtes demandé de livrer</h2>
+  <h2 class="text-center" *ngIf="listLiv.length == 0"> Pas de livraisons pour le moment</h2>
+  <br/>
+
+
+  <table class="table table-hover" *ngIf="listLiv.length>0" width="100%">
+    <thead class="thalpha">
+    <tr>
+      <th scope="col"> Date Livraison</th>
+      <th  scope="col"> Investisseur</th>
+      <th  scope="col"> Telephone</th>
+      <th  scope="col"> </th>
+
+    </tr>
+    </thead>
+    <tbody class="tbalpha">
+
+
+    <tr *ngFor="let liv of listLiv">
+
+      <td class="font-weight-bold"> {{liv.livraisonDate | date:'dd-MM-yyyy'}}</td>
+      <td class="card flex-row flex-wrap">
+        <div class="card-header border-0">
+          <img src="{{'http://localhost:8081/api/v1/ImgUser/'+liv.investissements[0].user.id }}" class="card-img inputStyle rounded-circle" alt="">
+          {{liv.investissements[0].user.userName}}
+        </div>
+      <td>
+        {{liv.investissements[0].user.telephone}}
+      </td>
+
+
+
+
+      <td>
+        <p>
+          <a  class="card-link feedalign imporant font-weight-bold" (click)="ToDetail(liv)"> plus-Détail </a>
+        </p>
+        </td>
+
+    </tr>
+
+
+
+    </tbody>
+  </table>
+
+</div>

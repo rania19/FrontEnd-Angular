@@ -1,0 +1,75 @@
+<div class="container" *ngIf="farm">
+
+  <h1 class="font-weight-bold"> Ferme</h1>
+  <hr class="firstline">
+
+  <div class="row">
+    <p class="col-md-4 font-weight-bold"> Nom de la ferme: {{farm.nomF}}</p>
+  </div>
+  <div class="row">
+    <p class="col-md-4 font-weight-bold"> Ville: {{farm.ville}}</p>
+  </div>
+  <div class="row">
+    <p class="col-md-4 font-weight-bold"> Adresse {{farm.region}}</p>
+  </div>
+  <div class="row">
+    <p class="col-md-4 font-weight-bold">Téléphone: {{farm.user.telephone}}</p>
+  </div>
+
+    <h1 class="font-weight-bold"> Aliments </h1>
+    <hr class="firstline">
+
+
+  <div class="col-12 text-center">
+  <div class="card-data">
+  <div *ngFor="let propE of propSelected">
+    <div class="col-lg-4">
+    <td>
+      <div class="card">
+        <div class="col-xs-4">
+          <div class="card-body">
+            <img class="img-fluid styleImg" src="{{'http://localhost:8081/api/productManage/ImgProd/'+propE.product.id }}" alt=""/>
+            <tr>
+              <h5 class="card-title font-weight-bold">{{propE.product.name}}</h5> </tr>
+            <div class="card-subtitle text-truncate text-muted"> {{propE.product.description}}</div>
+            <tr>  <div class="card-text d-flex justify-content-between">
+              <span class="text-color font-weight-bold">  Quantité </span>
+
+              <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{propE.quantity}}   Kg/L  </div>
+
+      </span>
+
+            </div> </tr>
+
+            <tr>
+              <div class="card-text d-flex justify-content-between">
+                <span class="text-color font-weight-bold">  Prix </span>
+
+                <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{propE.price}} DT    </div>
+
+
+      </span>
+
+              </div>
+
+            </tr>
+
+          </div>
+        </div>
+      </div>
+    </td>
+
+    </div>
+  </div>
+
+</div>
+
+
+    <button class="btn btn-class" type ="submit" (click)="SetInvest()">
+      Investir </button>
+
+  </div>
+
+</div>

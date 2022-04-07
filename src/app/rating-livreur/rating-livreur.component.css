@@ -1,0 +1,17 @@
+ngb-rating {
+  color: firebrick;
+  font-size: 80px;
+}
+.alertStyle{
+
+  width: 420px;
+}
+
+.alertColor{
+  color: firebrick;
+}
+.container{padding: 30px;
+  margin-right: 35px;
+  margin-left: 400px;
+
+}

@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="FarmAdd" (ngSubmit)="onSubmit()">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="nomF"> Nom de la ferme </label>
+          <input type="text" class="form-control" id="nomF"  placeholder="nom de la ferme" formControlName="nomF">
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="select">
+          <label for="ville"> Ville </label>
+          <select  class="selectstyle"
+                   id="ville"
+                   name="Selectedville"
+
+                   (change) ="selectChangeHandler($event)">
+            <option *ngFor="let ville of villes">{{ville}}</option>
+
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label for="region"> Adresse </label>
+          <input type="text" class="form-control" id="region"  placeholder="adresse" formControlName="region">
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+          <label for="descriptionF"> Description </label>
+          <input type="text" class="form-control" id="descriptionF"  placeholder="description" formControlName="descriptionF">
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text span-class" id="inputGroupFileAddon01">Télécharger</span>
+            </div>
+            <div class="custom-file">
+
+              <input type="file" class="custom-file-input" accept="image/*" (change)="onSelectFile($event)" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+
+              <label class="custom-file-label" for="inputGroupFile01">Télecharger </label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <img [src]="imgURL" height="200" *ngIf="imgURL">
+        </div>
+
+
+
+
+
+
+        <div class="submit-button text-center">
+          <button class="btn btn-class" id="submit" type="submit">Créer </button>
+          <div id="msgSubmit" class="h3 text-center hidden"></div>
+          <div class="clearfix"></div>
+        </div>
+
+
+
+
+
+      </div>
+    </form>
+
+  </div>
+</div>

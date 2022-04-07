@@ -1,0 +1,143 @@
+<div class="container" *ngIf="farm">
+  <div class="card mb-3" style="max-width: 400px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{'http://localhost:8081/api/v1/ImgFarm/'+farm.id}}" class="firstcard-img rounded" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-title font-weight-bold">  Nom: {{farm.nomF}}  <br/>
+          Description: {{farm.descriptionF}}<br/>
+          Ville: {{farm.ville}}<br/>
+          Adresse: {{farm.region}}<br/>
+          Telephone:{{farm.user.telephone}}<br/>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="col-12 text-center" *ngIf="this.user.clientrole ==='Investisseur'">
+  <button  *ngIf="farm.investon" class="btn btn-class" [routerLink]="['/invest',idFarm]">
+    Rechercher des paquets d'investissement </button>
+    <div class="row contentProducts"> <app-product [id]="idFarm"></app-product></div>
+
+
+  </div>
+
+
+  <div class="containerA">
+
+
+
+
+
+
+
+
+
+      <div>
+    <div *ngFor="let feedback of feedbacks">
+
+
+      <div class="card">
+      <div class="card-header">
+
+        <img src="{{'http://localhost:8081/api/v1/ImgUser/'+feedback.user.id }}" class="card-img inputStyle" alt="">
+        <strong>   {{feedback.user.userName}}  </strong>
+        <p class="feedalign">{{feedback.review}} </p>
+
+
+        <hr>
+
+
+        <a  *ngIf="feedback.user.id != idUser && feedback.user.id != farm.user.id" class="card-link feedalign imporant font-weight-bold" (click)="openDialog(feedback.id)"> Signaler </a>
+
+        <a  *ngIf="feedback.user.id == idUser"  class="card-link imporant font-weight-bold" (click)="deleteFeed(feedback.id)"> Retirer</a>
+
+        <p  *ngIf="feedback.user.id == farm.user.id"  class="card-link imporant font-weight-bold" (click)="deleteFeed(feedback.id)">  propriétaire de la ferme</p>
+      </div>
+
+      </div>
+      <br>
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+
+    <div class="card flex-row flex-wrap">
+      <div class="card-header border-0">
+        <img src="{{'http://localhost:8081/api/v1/ImgUser/'+idUser }}" class="card-img inputStyle" alt="">
+      </div>
+
+
+
+
+
+
+      <div class="card-block px-2">
+        <h4 class="card-title">
+          <br/>
+          <input type="text" class="inputStyle form-control" id="region"  placeholder="commenter..."  [(ngModel)]="review" formControlName="review">
+          <span class="mi-help alert-danger" *ngIf="!commentForm.get('review').valid && commentForm.get('review').touched">
+           commentaire vide
+        </span>
+          <br/>
+          <button class="btn btn-class" id="submit" type="submit">commenter</button>
+        </h4>
+        <p class="card-text">
+
+
+        </p>
+
+      </div>
+      <div class="w-100"></div>
+
+    </div>
+    </form>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+

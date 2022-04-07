@@ -1,0 +1,28 @@
+.pos {
+  display:inline-block;
+}
+.card-data {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.card {
+
+  width: 40%;
+  height: 100px;
+  line-height: 100px;
+  background-color: grey;
+  margin: 20px;
+
+  text-align: center;
+  vertical-align: middle;
+}
+.content{
+  margin: 2%;
+  padding: 15px ;
+}

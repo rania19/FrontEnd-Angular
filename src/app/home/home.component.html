@@ -1,0 +1,58 @@
+
+
+
+<div  class="banner">
+
+
+  <div class="container" *ngIf="user.rateset">
+    <div class="alert alert-success alertStyle" role="alert">
+      <h2 class="alert-heading alertColor">  Noter le service du livreur !</h2>
+      <hr>
+      <p class="mb-0">
+      <div class="text-center">
+        <br/>
+      <ng-template #t let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+  </span>
+      </ng-template>
+
+      <ngb-rating [starTemplate]="t" (rateChange)="RateLivreur($event)" [max]="5"  [resettable]="true" [(rate)]="currentRating" [readonly]="false"></ngb-rating>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="containerL" *ngIf="user.confirmAlert">
+    <div class="alert alert-success alertStyleLiv" role="alert">
+      <h2 class="alert-heading alertColor"> CONFIRMER LA LIVRAISON DU MOIS !</h2>
+      <p> C'est la fin du mois, veuillez confirmer la livraison de vos biens</p>
+      <hr>
+      <p class="mb-0">
+        <button class="btn btn-class " id="submit" type="submit" (click)="ToConfirmLiv()"> confirmer </button>
+
+      </p>
+    </div>
+  </div>
+
+  <br/>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+
+
+ <div>
+  <h1> FIRMETNA </h1>
+</div>
+
+</div>

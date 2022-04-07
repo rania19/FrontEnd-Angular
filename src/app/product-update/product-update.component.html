@@ -1,0 +1,100 @@
+
+<div class="form-group">
+  <div class="dropdown-menu" >
+    <a class="dropdown-item" > Produits laitiers </a>
+    <a class="dropdown-item" >Fruit/Légumes</a>
+    <a class="dropdown-item" >Animaux</a>
+  </div>
+</div>
+<div class="containerB" *ngIf="prodResp">
+
+  <form  [formGroup]="UpdateProductForm" (ngSubmit)="onSubmit()"*ngIf="prodResp">
+    <div class="row d-flex justify-content-center">
+      <div class="card mb-3" style="max-width: 400px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img    src="{{'http://localhost:8081/api/productManage/ImgProd/' + this.idProd}}"  (click)="onSelectFile($event)" class="card-img" alt="...">
+
+
+
+
+          </div>
+
+
+
+          <div class="col-md-8">
+
+            <h5 class="card-title"></h5>
+            <div class="card-body">
+
+              <div class="form-group">
+                <label for="userName"> Nom</label>
+                <input type="text" class="form-control" id="userNAme"    [(ngModel)]="prodResp.name" name="name" formControlName="name">
+                <span class="mi-help alert-danger" *ngIf="!UpdateProductForm.get('name').valid && UpdateProductForm.get('name').touched">
+           Nom de produit invalide
+        </span>
+
+              </div>
+
+              <br/>
+              <br/>
+              <div class="form-group">
+                <label for="description"> Description </label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="prodResp.description"   formControlName="description">
+                <span class="mi-help alert-danger" *ngIf="!UpdateProductForm.get('description').valid && UpdateProductForm.get('description').touched">
+          description invalide
+        </span>
+                <p class="card-text"> <small class="text-muted"></small></p>
+              </div>
+              <br/>
+
+
+
+              <div class="form-group">
+                <label for="quantity"> Quantité</label>
+                <input type="number" class="form-control" id="quantity"  [(ngModel)]="prodResp.quantity"  formControlName="quantity">
+                <span class="mi-help alert-danger" *ngIf="!UpdateProductForm.get('quantity').valid && UpdateProductForm.get('quantity').touched">
+            saisir la quantité
+        </span>
+
+              </div>
+              <br/>
+
+
+              <div class="form-group">
+                <label for="priceperUnit"> Prix par unité</label>
+                <input type="number" class="form-control" id="priceperUnit"  [(ngModel)]="prodResp.priceperUnit"  formControlName="priceperUnit">
+                <span class="mi-help alert-danger" *ngIf="!UpdateProductForm.get('priceperUnit').valid && UpdateProductForm.get('priceperUnit').touched">
+           prix invalide
+        </span>
+
+              </div>
+
+              <button class="btn btn-class " id="submit" type="submit"> Modifier </button>
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <hr>
+      </div>
+    </div>
+  </form>
+</div>
+

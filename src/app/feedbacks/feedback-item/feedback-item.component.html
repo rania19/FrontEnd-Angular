@@ -1,0 +1,39 @@
+
+
+<div *ngFor="let feedback of feedbacklist">
+<div class="card flex-row flex-wrap">
+  <div class="card-header border-0">
+    <img src="{{'http://localhost:8081/api/v1/ImgUser/'+feedback.user.id }}" class="card-img inputStyle" alt="">
+  </div>
+
+
+
+
+
+
+  <div class="card-block px-2">
+    <h4 class="card-title">
+      <br/>
+      <strong>   {{feedback.user.userName}}  </strong>
+
+
+
+      <br/>
+
+    </h4>
+    <p class="card-text">
+      {{feedback.review}}
+
+
+      <button *ngIf="feedback.user.id == idUser"  class="btn btn-danger" (click)="deleteFeed(feedback.id)"> retirer</button>
+
+
+
+    </p>
+
+  </div>
+  <div class="w-100"></div>
+  <hr>
+
+</div>
+</div>

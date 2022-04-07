@@ -1,0 +1,219 @@
+
+<div class="container" *ngIf="user">
+
+<h2 class="text-center">  Signales envoyés à propos le compte de   {{user.userName}}  </h2>
+
+  <div  *ngIf="user">
+    <h4 class="font-weight-bold text-center">  Nombre total des signales: {{user.signalNumber}} </h4>
+
+    <h3 class="font-weight-bold">  Violence: {{user.violenceNumb}} </h3>
+
+
+    <div *ngIf="ViolenceSignal.length != 0">
+    <table class="table table-hover" *ngIf="ViolenceSignal" width="100%">
+      <thead>
+      <tr>
+        <th scope="col"> Contenu du Feedback </th>
+
+        <th  scope="col">Signalé par</th>
+        <th  scope="col"> Raison </th>
+
+
+
+
+      </tr>
+      </thead>
+      <tbody class="tbalpha" *ngIf="ViolenceSignal">
+
+
+      <tr *ngFor="let s of ViolenceSignal">
+
+        <td> {{s.feedback.review}}</td>
+
+        <td class="card flex-row flex-wrap">
+          <div class="card-header border-0">
+            <img src="{{'http://localhost:8081/api/v1/ImgUser/'+s.user.id }}" class="card-img inputStyle rounded-circle" alt="">
+            {{s.user.userName}}
+          </div>
+
+
+        </td>
+
+        <td> {{s.reportReason}}</td>
+
+
+      </tr>
+
+
+
+      </tbody>
+    </table>
+    </div>
+    <hr>
+
+
+
+
+
+    <h3 class="font-weight-bold">  Harcélement: {{user.harcelNumb}} </h3>
+
+
+
+
+    <div *ngIf="HarcelementSignal.length != 0">
+      <table class="table table-hover" *ngIf="HarcelementSignal" width="100%">
+        <thead class="thalpha">
+        <tr>
+          <th scope="col"> Contenu du Feedback </th>
+          <th  scope="col">Signalé par</th>
+          <th  scope="col"> Raison </th>
+
+
+
+        </tr>
+        </thead>
+        <tbody class="tbalpha" *ngIf="ViolenceSignal">
+
+
+        <tr *ngFor="let si of HarcelementSignal">
+
+          <td> {{si.feedback.review}}</td>
+
+          <td class="card flex-row flex-wrap">
+            <div class="card-header border-0">
+              <img src="{{'http://localhost:8081/api/v1/ImgUser/'+si.user.id }}" class="card-img inputStyle rounded-circle" alt="">
+              {{si.user.userName}}
+            </div>
+
+
+          </td>
+
+          <td> {{si.reportReason}}</td>
+
+        </tr>
+
+
+
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+
+    <h3 class="font-weight-bold">  Fausse-information: {{user.fausseInfNumb}} </h3>
+
+
+
+    <div *ngIf="FauxInfosSignal.length != 0">
+      <table class="table table-hover" *ngIf="FauxInfosSignal" width="100%">
+        <thead class="thalpha">
+        <tr>
+          <th scope="col"> Contenu du Feedback </th>
+          <th  scope="col">Signalé par</th>
+          <th  scope="col"> Raison </th>
+
+
+
+        </tr>
+        </thead>
+        <tbody class="tbalpha" *ngIf="FauxInfosSignal">
+
+
+        <tr *ngFor="let si of FauxInfosSignal">
+
+          <td> {{si.feedback.review}}</td>
+
+          <td class="card flex-row flex-wrap">
+            <div class="card-header border-0">
+              <img src="{{'http://localhost:8081/api/v1/ImgUser/'+si.user.id }}" class="card-img inputStyle rounded-circle" alt="">
+              {{si.user.userName}}
+            </div>
+
+
+          </td>
+
+          <td> {{si.reportReason}}</td>
+
+        </tr>
+
+
+
+        </tbody>
+      </table>
+
+    </div>
+    <hr>
+
+
+
+
+    <h3 class="font-weight-bold"> Spam: {{user.spamNumb}}</h3>
+
+
+    <div *ngIf="spamSignal.length != 0">
+      <table class="table table-hover" *ngIf="spamSignal" width="100%">
+        <thead class="thalpha">
+        <tr>
+          <th scope="col"> Contenu du Feedback </th>
+          <th  scope="col">Signalé par</th>
+          <th  scope="col"> Raison </th>
+
+
+
+        </tr>
+        </thead>
+        <tbody class="tbalpha" *ngIf="spamSignal">
+
+
+        <tr *ngFor="let si of spamSignal">
+
+          <td> {{si.feedback.review}}</td>
+
+          <td class="card flex-row flex-wrap">
+            <div class="card-header border-0">
+              <img src="{{'http://localhost:8081/api/v1/ImgUser/'+si.user.id }}" class="card-img inputStyle rounded-circle" alt="">
+              {{si.user.userName}}
+            </div>
+
+
+          </td>
+
+          <td> {{si.reportReason}}</td>
+
+
+        </tr>
+
+
+
+        </tbody>
+      </table>
+    </div>
+    <hr>
+
+
+  </div>
+
+  <div class="text-center" *ngIf="user.signalNumber >=5 && !user.banned">
+    <br/>
+    <h2 class="imporant"> Cet utilisateur a atteint le nombre limite de signales, vous pouvez maintenant le bannir</h2>
+
+  <button class="btn btn-danger " id="submit" type="submit" (click)="openDialog(user.id)"> Bannir </button>
+
+</div>
+
+  <div class="text-center" *ngIf="user.signalNumber>=5 && banned">
+    <br/>
+    <h2 class="imporant"> Cet utilisateur est banni pendant {{user.bannperiod}}</h2>
+
+
+  </div>
+
+  <div class="text-center" *ngIf="user.signalNumber<5">
+     <br/>
+
+    <h2 class="imporant"> Cet utilisateur n'a pas atteint le nombre maximale de signales pour lui bannir</h2>
+
+  </div>
+
+</div>

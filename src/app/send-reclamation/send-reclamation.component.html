@@ -1,0 +1,45 @@
+<div class="containerB">
+
+  <form  [formGroup]="SendReclamation" (ngSubmit)="onSubmit()">
+    <div class="row d-flex justify-content-center">
+      <div class="card mb-3" style="max-width: 400px;">
+
+      <h1 class="font-weight-bold"> Reclamation </h1>
+        <hr>
+
+
+
+    <div class="containerC">
+
+      <div class="form-group">
+        <label for="object">  Objet </label>
+      <input type="text" id="object" class="form-control inputW" formControlName="object" placeholder="objet">
+      </div>
+
+        <br/>
+
+        <div class="form-group">
+          <label for="content"> Contenu de la reclamation </label>
+          <textarea class="form-control " id="content" rows="3" formControlName="content"></textarea>
+        </div>
+
+
+      <button class="btn btn-class " id="submit" type="submit"> Envoyer </button>
+
+
+  </div>
+      </div>
+
+    </div>
+
+  </form>
+
+  <div *ngIf=this.isSuccessful class="justify-content-center secondmain">
+    <p>
+      <ngb-alert class="alertStyle" type="success" [dismissible]="false"><strong> Votre reclamation a été enoyé</strong> </ngb-alert>
+    </p>
+
+  </div>
+
+</div>
+

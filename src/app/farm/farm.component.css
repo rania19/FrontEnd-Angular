@@ -1,0 +1,15 @@
+.containerA{
+  margin: 2%;
+  padding: 15px ;
+  box-shadow: none;
+
+
+}
+.firstline {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 3px;
+}

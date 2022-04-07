@@ -1,0 +1,68 @@
+
+
+
+<div *ngIf="Farminvests">
+
+
+  <h1 class="font-weight-bold"> Les investissement courants sur votre ferme </h1>
+  <hr class="firstline">
+
+
+  <table class="table table-hover" *ngIf="Farminvests.length>0" width="100%">
+    <thead class="thalpha">
+    <tr>
+      <th scope="col"> Investisseur</th>
+      <th  scope="col">Téléphpne</th>
+
+      <th  scope="col">Ville</th>
+      <th  scope="col"> adresse</th>
+      <th  scope="col">Produits</th>
+      <th  scope="col">Montant/Mois</th>
+      <th  scope="col">Etat</th>
+
+
+    </tr>
+    </thead>
+    <tbody class="tbalpha">
+
+
+    <tr *ngFor="let inv of Farminvests">
+
+      <td class="card flex-row flex-wrap">
+        <div class="card-header border-0">
+          <img src="{{'http://localhost:8081/api/v1/ImgUser/'+inv.user.id}}" class="card-img inputStyle rounded-circle" alt="">
+          {{inv.user.userName}}
+        </div>
+
+
+      </td>
+      <td> {{inv.user.telephone}}</td>
+      <td>{{inv.user.ville}} </td>
+      <td>{{inv.user.addresse}} </td>
+      <td>
+        <div class=" card flex-row flex-wrap" *ngFor="let prodEL of inv.listproductelements">
+          <div class="card-header border-0">
+            <img src="{{'http://localhost:8081/api/productManage/ImgProd/'+ prodEL.product.id }}" class="card-img inputStyle rounded-circle" alt="">
+            {{prodEL.product.name}}
+          </div>
+        </div>
+      </td>
+      <td class="imporant font-weight-bold"> {{inv.total}} DT
+
+      </td>
+
+      <td class="imporant font-weight-bold">{{inv.invStatus}}</td>
+
+    </tr>
+
+
+
+    </tbody>
+  </table>
+
+  <h2 *ngIf="Farminvests.length ===0"> Aucun investissement sur votre ferme </h2>
+
+
+
+</div>
+

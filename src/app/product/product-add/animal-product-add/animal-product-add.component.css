@@ -1,0 +1,17 @@
+.content{
+  margin: 2%;
+  padding: 25px ;
+
+}
+.span-class{
+  background-color: #8bc53f;
+  border: none;
+}
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 1px;
+}

@@ -1,0 +1,11 @@
+<div class="alert alert-success" role="alert">
+  <h2 class="alert-heading"> {{Rec.object}}</h2>
+  <p> {{Rec.content}}</p>
+  <hr>
+
+  <div class="card-header border-0 mb-0">
+    <img src="{{'http://localhost:8081/api/v1/ImgUser/'+Rec.user.id }}" class="card-img inputStyle rounded-circle" alt="">
+    {{Rec.user.userName}}
+  </div>
+
+</div>

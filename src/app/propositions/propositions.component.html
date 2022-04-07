@@ -1,0 +1,18 @@
+
+
+<div class="col-lg content cursor-pointer" *ngIf="prop" propContainer >
+  <div class="card"
+       class="list-group-item clearfix shadow bg-white rounded"
+       (click)="Invest(prop)"
+
+  >
+    <div class="row">
+      <div>
+        <div class="card-data">
+<app-propositions-list  *ngFor="let propEl of prop" [propE] =propEl> </app-propositions-list>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

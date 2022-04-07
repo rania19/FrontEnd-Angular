@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+@import '~material-icons/iconfont/material-icons.css';
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.form-control{
+  display: block;
+  width: 100%;
+  font-size:1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-color: #8bc53f ;
+  color:#8bc53f;
+  border-style: solid !important;
+  border-width: 0 0 1px 0 !important;
+  padding: 0px !important;
+  height: auto;
+  border-radius: 0;
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: none;
+}
+.form-control:focus{
+  color:#8bc53f;
+  border-color: #8bc53f ;
+  box-shadow: none;
+  outline: 0;
+}
+
+.btn-class{
+  border-color: #8bc53f ;
+}
+.btn-class:hover{
+  background-color: #8bc53f ;
+  box-shadow: none;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

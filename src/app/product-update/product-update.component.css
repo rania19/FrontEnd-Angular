@@ -1,0 +1,47 @@
+.containerB{
+  margin: 2%;
+  padding: 15px ;
+
+
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 1px;
+}
+
+.card{
+  border: none;
+}
+
+.input-wrapper {
+  margin-bottom:5px;
+}
+
+.Categorie{
+  display: block;
+  width: 100%;
+  font-size:1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-color: #8bc53f ;
+  color:#8bc53f;
+  border-style: solid !important;
+  border-width: 0 0 1px 0 !important;
+  padding: 0px !important;
+  height: auto;
+  border-radius: 0;
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: none;
+}
+select:focus{
+  color:#8bc53f;
+  border-color: #8bc53f ;
+  box-shadow: none;
+  outline: 0;
+}

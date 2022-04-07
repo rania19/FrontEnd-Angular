@@ -1,0 +1,53 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="toggleSideBar()">
+      <mat-icon> menu </mat-icon>
+      <span><a class="navbar-brand" href="#"><img src="assets/images/brand.png"  class="imgLogo" alt="..."></a>
+      </span>
+    </button>
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+    <ul fxLayout="row" fxLayoutGap="20px">
+     <li>
+
+     <button mat-icon-button>
+
+     </button>
+
+     </li>
+
+      <li>
+
+        <button mat-icon-button>
+
+        </button>
+
+      </li>
+
+
+      <div  class="marginAdjust">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown"> </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <a class="menuStyle grab dropdown-item" (click)="Deconnect()" > déconnexion</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+    </ul>
+    </div>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+<div class="col-lg-10 col-md-6" *ngIf="AnimalProduct">
+<div class="card">
+
+  <img class="img-fluid" src="{{'http://localhost:8081/api/productManage/ImgProd/'+AnimalProduct.id }}" alt=""/>
+  <div class="card-body">
+    <h4 class="card-title"> {{AnimalProduct.name}} </h4>
+     <div class="card-subtitle text-truncate text-muted"> {{AnimalProduct.description}}</div>
+    <div class="card-text d-flex justify-content-between">
+      <span class="text-color font-weight-bold">  Price/Animal</span>
+
+      <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{AnimalProduct.priceperUnit}}   DT </div>
+
+
+      </span>
+
+    </div>
+
+
+    <div class="card-text d-flex justify-content-between">
+      <span class="text-color font-weight-bold">  Stock</span>
+
+      <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{AnimalProduct.quantity}}   </div>
+
+
+      </span>
+
+    </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,66 @@
+<div class="container">
+
+  <div class="form-group row">
+    <label for="search" class="col-sm-2 col-form-label" style="text-align: right;"> Rechercher</label>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="text"  id="search" class="form-control" placeholder="Rechercher" [(ngModel)]="term">
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+<table class="table table-hover" *ngIf="Allusers" width="100%">
+  <thead class="thalpha">
+  <tr>
+    <th scope="col"> utilisateur</th>
+    <th  scope="col">Compte</th>
+    <th  scope="col">email</th>
+    <th  scope="col">ville</th>
+    <th  scope="col">addresse</th>
+    <th  scope="col">Téléphone</th>
+    <th  scope="col">Nombre-signal</th>
+    <th  scope="col">Etat</th>
+
+
+  </tr>
+  </thead>
+  <tbody class="tbalpha">
+
+
+  <tr *ngFor="let user of Allusers | filter:term">
+
+    <td class="card flex-row flex-wrap">
+     <div class="card-header border-0">
+       <img src="{{'http://localhost:8081/api/v1/ImgUser/'+user.id }}" class="card-img inputStyle rounded-circle" alt="">
+       {{user.userName}}
+     </div>
+
+
+    </td>
+    <td class="font-weight-bold">  {{user.clientrole}}</td>
+    <td> {{user.email}}</td>
+    <td> {{user.ville}}</td>
+    <td>{{user.addresse}} </td>
+    <td>{{user.telephone}} </td>
+    <td class="imporant font-weight-bold"> {{user.signalNumber}}
+      <p>
+      <a  class="card-link feedalign imporant font-weight-bold" (click)="ToDetail(user.id)"> plus-Détail </a>
+      </p>
+    </td>
+
+    <td class="font-weight-bold">{{user.status}} </td>
+
+  </tr>
+
+
+
+  </tbody>
+</table>
+  <!-- Angular 8 pagination -->
+  <mat-paginator [pageSizeOptions]="[3, 10, 15]" showFirstLastButtons></mat-paginator>
+</div>

@@ -1,0 +1,213 @@
+<div class="containerA">
+  <div *ngIf="user">
+  <div class="justify-content-center" *ngIf="user.clientrole =='Agriculteur' && !IsFarmExist">
+    <h1 class="font-weight-bold">Vous n'avez pas encore créer votre ferme sur notre site, veuillez cliquez sur ce boutton !</h1>
+    <button class="btn btn-class"   [hidden]="IsFarmExist" [routerLink]="['/farm-add']">
+      Créér une ferme  </button>
+
+  </div>
+</div>
+<div class="container" *ngIf="farm">
+
+  <div class="card mb-3" style="max-width: 400px;">
+    <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{'http://localhost:8081/api/v1/ImgFarm/'+farm.id}}" class="card-img rounded" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-title font-weight-bold">  Nom: {{f.nomF}}  <br/>
+         Description: {{f.descriptionF}}<br/>
+        Ville: {{f.ville}}<br/>
+        Adresse: {{f.region}}<br/>
+        Telephone:{{f.user.telephone}}<br/>
+        <a class="text-center font-weight-bold important" (click)="FarmUpdate()"> Modifier</a>
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="containerB">
+  <div class="row">
+    <div class="col-4">
+      <div class="dropdown row">
+        <button class="btn btn-class dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ajouter un aliment
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="farm">
+          <a class="dropdown-item" [routerLink]="['MilkProduct-add',farm.id]"> Produits laitiers </a>
+          <a class="dropdown-item"  [routerLink]="['VegProduct-add',farm.id]">Fruit/Légumes</a>
+          <a class="dropdown-item" [routerLink]="['AnimalProduct-add',farm.id]">Animaux</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <router-outlet></router-outlet>
+    </div>
+
+
+    <div class="row contentProducts" *ngIf="farm"> <app-manage-products [id]="farm.id"></app-manage-products></div>
+
+
+
+
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="containerA">
+
+
+
+
+
+
+
+
+
+    <div *ngIf="listfeedbacks">
+    <div *ngFor="let feedback of listfeedbacks">
+
+
+      <div class="card">
+        <div class="card-header">
+
+          <img src="{{'http://localhost:8081/api/v1/ImgUser/'+feedback.user.id }}" class="cardFeed-img inputStyle" alt="">
+          <strong>   {{feedback.user.userName}}  </strong>
+          <p class="feedalign">{{feedback.review}} </p>
+
+          <hr>
+
+
+          <a  *ngIf="feedback.user.id != idUser " class="card-link feedalign imporant font-weight-bold" (click)="openDialog(feedback.id)"> Signaler </a>
+
+          <a  *ngIf="feedback.user.id == idUser"  class="card-link imporant font-weight-bold" (click)="deleteFeed(feedback.id)"> Retirer</a>
+
+        </div>
+
+      </div>
+      <br>
+
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+
+      <div class="card flex-row flex-wrap">
+        <div class="card-header border-0">
+          <img src="{{'http://localhost:8081/api/v1/ImgUser/'+idUser }}" class="card-img inputStyle" alt="">
+        </div>
+
+
+
+
+
+
+        <div class="card-block px-2">
+          <h4 class="card-title">
+            <br/>
+            <input type="text" class="inputStyle form-control" id="region"  placeholder="commenter..."  [(ngModel)]="review" formControlName="review">
+            <span class="mi-help alert-danger" *ngIf="!commentForm.get('review').valid && commentForm.get('review').touched">
+           commentaire vide
+        </span>
+            <br/>
+            <button class="btn btn-class" id="submit" type="submit">commenter</button>
+          </h4>
+          <p class="card-text">
+
+
+          </p>
+
+        </div>
+        <div class="w-100"></div>
+
+      </div>
+    </form>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

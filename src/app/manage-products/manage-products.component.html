@@ -1,0 +1,202 @@
+
+<div class="row content" *ngIf="AnimalProducts.length>0">
+  <h2 *ngIf="AnimalProducts">Animaux:
+
+    <hr>
+  </h2>
+
+</div>
+
+
+
+
+<div class="row" *ngIf="AnimalProducts">
+  <div  *ngFor="let AnimalProduct of AnimalProducts">
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-md-6" *ngIf="AnimalProduct">
+          <div class="card ">
+
+            <i class="fa fa-minus-circle fa-2x trashStyle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Cliquer pour supprimer"  (click)="openDialog(AnimalProduct.id)"></i>
+            <img class="img-fluid" src="{{'http://localhost:8081/api/productManage/ImgProd/'+AnimalProduct.id }}" alt=""/>
+            <div class="card-body">
+              <h4 class="card-title"> {{AnimalProduct.name}} </h4>
+              <div class="card-subtitle text-truncate text-muted"> {{AnimalProduct.description}}</div>
+              <div class="card-text d-flex justify-content-between">
+                <span class="text-color font-weight-bold">  Price/Animal</span>
+
+                <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{AnimalProduct.priceperUnit}}   DT </div>
+
+
+      </span>
+
+              </div>
+
+
+              <div class="card-text d-flex justify-content-between">
+                <span class="text-color font-weight-bold">  Stock</span>
+
+                <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{AnimalProduct.quantity}}   </div>
+
+
+      </span>
+
+
+              </div>
+              <a class="text-center font-weight-bold important" (click)="Update(AnimalProduct.id)"> Modifier</a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+<div class="row content" *ngIf="MilkProducts.length>0">
+  <h2>Produits laitiers:
+    <hr>
+  </h2>
+
+
+</div>
+<div class="row" *ngIf="MilkProducts">
+  <div  *ngFor="let MilkProduct of MilkProducts">
+
+
+
+
+
+    <div class="container">
+      <div class="row MilkSection">
+        <div class="col-lg-10 col-md-6" *ngIf="MilkProduct">
+          <div class="card " data-toggle="tooltip" data-placement="top" title="Cliquer pour supprimer">
+            <i  class="fa fa-minus-circle fa-2x trashStyle" aria-hidden="true" (click)="openDialog(MilkProduct.id)"></i>
+            <img class="img-fluid" src="{{'http://localhost:8081/api/productManage/ImgProd/'+ MilkProduct.id }}" alt=""/>
+            <div class="card-body">
+              <h4 class="card-title"> {{MilkProduct.name}} </h4>
+              <div class="card-subtitle text-truncate text-muted"> {{MilkProduct.description}}</div>
+              <div class="card-text d-flex justify-content-between">
+                <span class="text-color font-weight-bold">  Price/Litre</span>
+
+                <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{MilkProduct.priceperUnit}}   DT </div>
+
+
+      </span>
+
+              </div>
+
+
+              <div class="card-text d-flex justify-content-between">
+                <span class="text-color font-weight-bold">  Stock</span>
+
+                <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{MilkProduct.quantity}}   </div>
+
+
+      </span>
+
+              </div>
+              <a class="text-center font-weight-bold important" (click)="Update(MilkProduct.id)"> Modifier</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+<div class="row content" *ngIf="VegProducts.length>0">
+
+  <h2> Légumes/Fruits:
+    <hr>
+  </h2>
+
+</div>
+
+<div class="row" *ngIf="VegProducts">
+  <div class="row" *ngFor="let VegProduct of VegProducts">
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-md-6" *ngIf="VegProduct">
+          <div class="card " data-toggle="tooltip" data-placement="top" title="Cliquer pour supprimer">
+            <i class="fa fa-minus-circle fa-2x trashStyle" aria-hidden="true" (click)="openDialog(VegProduct.id)"></i>
+            <img class="img-fluid" src="{{'http://localhost:8081/api/productManage/ImgProd/'+VegProduct.id }}" alt=""/>
+            <div class="card-body">
+              <h4 class="card-title"> {{VegProduct.name}} </h4>
+              <div class="card-subtitle text-truncate text-muted"> {{VegProduct.description}}</div>
+              <div class="card-text d-flex justify-content-between">
+                <span class="text-color font-weight-bold">  Price/Animal</span>
+
+                <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{VegProduct.priceperUnit}}   DT </div>
+
+
+      </span>
+
+              </div>
+
+
+              <div class="card-text d-flex justify-content-between">
+                <span class="text-color font-weight-bold">  Stock</span>
+
+                <span class="_priceSection position-relative">
+        <div class="font-weight-bold"> {{VegProduct.quantity}}   </div>
+
+
+      </span>
+
+
+              </div>
+              <a class="text-center font-weight-bold important" (click)="Update(VegProduct.id)"> Modifier</a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+<script>
+$(document).ready(function (){
+  $('i').tooltip();
+})
+
+</script>

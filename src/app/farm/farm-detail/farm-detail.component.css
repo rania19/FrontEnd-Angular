@@ -1,0 +1,61 @@
+.content{
+  margin: 2%;
+  padding: 15px ;
+  box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
+}
+.contentProducts{
+  margin: 2%;
+  padding: 15px ;
+}
+.firstcard-img{
+  width: 70px;
+}
+ngb-rating {
+  font-size: 100px;
+  color:brown;
+
+}
+.container{
+  padding: 50px;
+}
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#8bc53f;
+  height: 3px;
+}
+.card-img{
+  width: 30px;
+}
+
+.card{
+  border: none;
+  width: 700px;
+}
+
+.inputStyle{
+  margin-left: auto;
+}
+
+a:hover{
+  cursor: default;
+
+}
+
+.containerA{
+  margin: 2%;
+  padding: 15px ;
+  box-shadow: none;
+
+
+}
+.imporant{
+  color: firebrick;
+
+}
+
+.feedalign{
+  margin-left: 31px;
+}
