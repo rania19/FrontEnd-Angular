@@ -1,6 +1,6 @@
 # FrontEnd-Angular
 # This repository contains the Front-End part of my graduation project.
-# It's web application that provides services to both farmers and consumers. Among the features offered through this solution:
+# It's a web application that provides services to both farmers and consumers. Among the features offered through this solution:
 -Management of farm interfaces by farmers.
 -Consumer search for food packages for investment.
 -Monthly subscription to farms through credit card.
